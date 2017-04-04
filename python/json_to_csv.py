@@ -100,7 +100,9 @@ class StreamData(object):
                         _folder,_file_name = item['file'].rsplit('/',1)
                         writer.writerow(
                             {
-                                'TIMESTAMP':item['timestamp'],
+                                'TIMESTAMP':'%s%s' \
+                                    %(str(datetime.strptime(item['timestamp'],'%m/%d/%Y %I:%M:%S%p')).replace(' ','T'),
+                                      item['timeOffset'] if item.get('timeOffset') else 'Z'),
                                 'ACTION': _action_dict[item['activity']],
                                 'USER': item['user'].split('@')[0],
                                 'FOLDER': _folder,
