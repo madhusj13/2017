@@ -20,7 +20,7 @@ a) This python file provides StreamData class which,<br />
 b) There is a helper function to normalize time based on offset and convert time to GMT.<br />
 c) The code makes use of standard python libraries, so there is no need for an additional requirements file.<br />
 d) Lists, sets and other variables are declared in the init section which are used to generate analytics. <br />
-
+e) Assumption - All data from the JSON file is used to analyze start and end dates.
 
 
 

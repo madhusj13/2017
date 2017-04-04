@@ -59,13 +59,17 @@ class StreamData(object):
             self.read_json()
             
     def read_json(self):
+        """Reads a JSON file and convert to a list of dict"""
         self.data = []
         for _item in open(self.json_file,'r'):
             self.line_count += 1
             self.data.append(json.loads(_item))
 
     def write_to_csv(self):
-        # `TIMESTAMP,ACTION,USER,FOLDER,FILENAME,IP`
+        """
+        Read dict, massage data and populate a CSV file in this format
+        `TIMESTAMP,ACTION,USER,FOLDER,FILENAME,IP`
+        """
         with open(self.csv_file,'w+') as csv_file:
             fields = ['TIMESTAMP','ACTION','USER','FOLDER','FILENAME','IP']
             writer = csv.DictWriter(csv_file, fieldnames=fields)
@@ -126,6 +130,7 @@ class StreamData(object):
                     self.dup_count += 1 
 
     def write_to_json(self):
+        """Gather metrics and populate a JSON file"""
         out_dict = {}
         self.time_stamp_list.sort()        
         out_dict['linesRead'] = self.line_count
