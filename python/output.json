@@ -1,0 +1,17 @@
+{
+    "startDate": "2016-01-14 23:53:45", 
+    "droppedEventsCounts": 25, 
+    "endDate": "2016-01-17 00:44:02", 
+    "linesRead": 102, 
+    "actions": {
+        "ACCESSED": 15, 
+        "ADD": 41, 
+        "REMOVE": 21
+    }, 
+    "uniqueFiles": 41, 
+    "uniqueUser": 17, 
+    "droppedEvents": {
+        "Duplicates": 2, 
+        "No action mapping": 23
+    }
+}
