@@ -148,7 +148,7 @@ if __name__=='__main__':
         '--in_json', 
         help='Input JSON file',
         required=False,
-        default=os.getcwd()+'metadataObjects100.json'
+        default=os.getcwd()+'/metadataObjects100.json'
         )
     parser.add_argument(
         '--out_json',
