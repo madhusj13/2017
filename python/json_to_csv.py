@@ -1,6 +1,8 @@
 import json,csv
 import argparse
-import datetime,os,argparse
+import os,argparse
+from datetime import datetime
+from datetime import timedelta
 from pprint import pprint 
 
 def time_normalizer(time,offset):
@@ -11,14 +13,13 @@ def time_normalizer(time,offset):
     if the hour is >= 24, increment day by 1
     """
     
-    in_time = datetime.datetime.strptime(time,'%m/%d/%Y %I:%M:%S%p')
+    in_time = datetime.strptime(time,'%m/%d/%Y %I:%M:%S%p')
     offset = float(offset.replace(':','.'))
     #offset = float(datetime.strptime(offset,'%I:%M').replace(':','.'))
     new_hr = in_time.hour-(offset)
+    
     if new_hr >= 24:
-        new_hr = int(new_hr-24)
-        new_day = in_time.day + 1 
-        return in_time.replace(hour=new_hr,day=new_day)
+        return in_time + timedelta(hours=1)
     else:
         return in_time
     
@@ -148,7 +149,7 @@ if __name__=='__main__':
         '--in_json', 
         help='Input JSON file',
         required=False,
-        default=os.getcwd()+'/metadataObjects100.json'
+        default=os.getcwd()+'/metadataObjects.json'
         )
     parser.add_argument(
         '--out_json',
