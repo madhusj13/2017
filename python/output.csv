@@ -1,3 +1,4 @@
+TIMESTAMP,ACTION,USER,FOLDER,FILENAME,IP
 01/14/2016 07:37:36PM,ADD,rGarcia,/data/onlineDocs/2015/Q2,expences-May-2015.doc,10.10.10.107
 01/14/2016 07:59:40PM,ACCESSED,eThomas,/data/onlineDocs,help.doc,10.10.10.203
 01/14/2016 08:49:07PM,ADD,rGarcia,/data/onlineDocs/2013/Q1,bigSoftwareDeal.doc,10.10.10.107

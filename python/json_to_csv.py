@@ -69,6 +69,7 @@ class StreamData(object):
         with open(self.csv_file,'w+') as csv_file:
             fields = ['TIMESTAMP','ACTION','USER','FOLDER','FILENAME','IP']
             writer = csv.DictWriter(csv_file, fieldnames=fields)
+            writer.writeheader()
             _action_dict = {
                 'createdDoc': 'ADD',
                 'deletedDoc': 'REMOVE',
